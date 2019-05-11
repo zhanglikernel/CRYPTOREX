@@ -3,7 +3,8 @@ CryptoREX is a firmware analysis tool to detect crypto misuses in IoT devices. N
 # Prerequisites
 1. IDA Pro. We tested version 6.4.
 2. Python. We tested version 2.7.4.
-3. Multiple Python libs.
+3. angr
+4. buildroot
 # How to use
 python bin2vex.py <firmware_path>(input_dir) <firmware_decompressed_path>(middle_dir) <firmware_IR_PATH>(middle_dir) <detail_report_path>(output_dir) <summary_report_dir>(output_dir)
 # How to cite
