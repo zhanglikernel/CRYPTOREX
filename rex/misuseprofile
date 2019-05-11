@@ -1,0 +1,130 @@
+ruledes:
+1	constants salt
+2	constants keys
+3	constants iv
+4	using ecb mode
+5	using static seed for rand
+6	iteration
+misusefunction:
+#int DES_processFile(a,b,c,ps)	4:string:2:
+#cryptlib
+int cryptImportKey( const void *encryptedKey, const int encryptedKeyLength, const CRYPT_CONTEXT importContext, const CRYPT_CONTEXT sessionKeyContext)	4:string:2:;1:none:3:
+int cryptSetAttribute( const CRYPT_HANDLE cryptObject, const CRYPT_ATTRIBUTE_TYPE attributeType, const int value)	3:int:4:4
+#GnuTLS
+#libgcrypt
+gcry_error_t gcry_cipher_open (gcry_cipher_hd_t *hd, int algo, int mode, unsigned int flags)	3:int:4:=1
+gcry_error_t gcry_cipher_setiv(gcry_cipher_hd_t h, const void *k, size_t l)	2:string:3:
+gcry_error_t gcry_cipher_setkey (gcry_cipher_hd_t h, const void *k, size_t l)	2:string:2:
+#libcrypto
+int AES_set_encrypt_key(const unsigned char *userKey, const int bits,AES_KEY *key)	1:string:2:
+int AES_set_decrypt_key (const unsigned char *userKey, const int bits, AES_KEY *key)	1:string:2:
+void AES_ecb_encrypt (const unsigned char *in, unsigned char *out, const AES_KEY *key, const int enc)	1:none:4:
+void AES_cbc_encrypt (const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, const int enc)	5:string:3:
+void AES_cfb128_encrypt (const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void AES_cfb1_encrypt (const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void AES_cfb8_encrypt (const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void AES_ofb128_encrypt (const unsigned char *in, unsigned char *out, size_t length, const AES_KEY *key, unsigned char *ivec, int *num)	5:string:3:
+int AES_wrap_key (AES_KEY *key, const unsigned char *iv, unsigned char *out, const unsigned char *in, unsigned int inlen)	2:string:3:
+int AES_unwrap_key (AES_KEY *key, const unsigned char *iv, unsigned char *out, const unsigned char *in, unsigned int inlen)	2:string:3:
+void BF_set_key(BF_KEY *key, int len, const unsigned char *data)	3:string:2:
+void AES_encrypt(const unsigned char *in, unsigned char *out, const AES_KEY *key)	1:none:4:
+void AES_decrypt(const unsigned char *in, unsigned char *out, const AES_KEY *key)	1:none:4:
+void BF_ecb_encrypt(const unsigned char *in, unsigned char *out,BF_KEY *key, int enc);	1:none:4:
+void BF_cbc_encrypt(const unsigned char *in, unsigned char *out,long length, BF_KEY *schedule, unsigned char *ivec, int enc)	5:string:3:
+void BF_cfb64_encrypt(const unsigned char *in, unsigned char *out,long length, BF_KEY *schedule, unsigned char *ivec, int *num,int enc)	5:string:3:
+void BF_ofb64_encrypt(const unsigned char *in, unsigned char *out,long length, BF_KEY *schedule, unsigned char *ivec, int *num)	5:string:3:
+void BF_encrypt(BF_LONG *data,const BF_KEY *key)	1:none:4:
+void BF_decrypt(BF_LONG *data,const BF_KEY *key)	1:none:4:
+int Camellia_set_key(const unsigned char *userKey, const int bits, CAMELLIA_KEY *key)	1:string:2:
+void Camellia_ecb_encrypt(const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key, const int enc)	1:none:4:
+void Camellia_cbc_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, const int enc)	5:string:3:
+void Camellia_cfb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void Camellia_cfb1_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void Camellia_cfb8_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num, const int enc)	5:string:3:
+void Camellia_ofb128_encrypt(const unsigned char *in, unsigned char *out, size_t length, const CAMELLIA_KEY *key, unsigned char *ivec, int *num)	5:string:3:
+void Camellia_encrypt (const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key)	1:none:4:
+void Camellia_decrypt (const unsigned char *in, unsigned char *out, const CAMELLIA_KEY *key)	1:none:4:
+void CAST_set_key(CAST_KEY *key, int len, const unsigned char *data)	1:string:2:
+void CAST_ecb_encrypt(const unsigned char *in, unsigned char *out, const CAST_KEY *key, int enc)	1:none:4:
+void CAST_encrypt(CAST_LONG *data, const CAST_KEY *key)	1:none:4:
+void CAST_decrypt(CAST_LONG *data, const CAST_KEY *key)	1:none:4:
+void CAST_cbc_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *ks, unsigned char *iv, int enc)	5:string:3:
+void CAST_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *schedule, unsigned char *ivec, int *num, int enc)	5:string:3:
+void CAST_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, const CAST_KEY *schedule, unsigned char *ivec, int *num)	5:string:3:
+void DES_ecb2_encrypt(const_DES_cblock *input, DES_cblock *output,DES_key_schedule *ks1, DES_key_schedule *ks2, int enc)	1:none:4:
+void DES_ecb3_encrypt(const_DES_cblock *input, DES_cblock *output,DES_key_schedule *ks1, DES_key_schedule *ks2, DES_key_schedule *ks3, int enc)	1:none:4:
+void DES_ncbc_encrypt(const unsigned char *input, unsigned char *output,long length, DES_key_schedule *schedule, DES_cblock *ivec,int enc)	5:string:3:
+void DES_cfb_encrypt(const unsigned char *in, unsigned char *out,int numbits, long length, DES_key_schedule *schedule,DES_cblock *ivec, int enc)	6:string:3:
+void DES_ofb_encrypt(const unsigned char *in, unsigned char *out,int numbits, long length, DES_key_schedule *schedule,DES_cblock *ivec)	6:string:3:
+void DES_pcbc_encrypt(const unsigned char *input, unsigned char *output,long length, DES_key_schedule *schedule, DES_cblock *ivec,int enc)	5:string:3:
+void DES_cfb64_encrypt(const unsigned char *in, unsigned char *out,long length, DES_key_schedule *schedule, DES_cblock *ivec,int *num, int enc)	4:string:3:
+void DES_ofb64_encrypt(const unsigned char *in, unsigned char *out,long length, DES_key_schedule *schedule, DES_cblock *ivec,int *num)	4:string:3:
+void DES_xcbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *schedule, DES_cblock *ivec, const_DES_cblock *inw, const_DES_cblock *outw, int enc)	5:string:3:
+void DES_ede2_cbc_encrypt(const unsigned char *input, unsigned char *output, long length, DES_key_schedule *ks1,DES_key_schedule *ks2, DES_cblock *ivec, int enc)	6:string:3:
+void DES_ede2_cfb64_encrypt(const unsigned char *in,unsigned char *out, long length, DES_key_schedule *ks1,DES_key_schedule *ks2, DES_cblock *ivec, int *num, int enc)	6:string:3:
+void DES_ede2_ofb64_encrypt(const unsigned char *in,unsigned char *out, long length, DES_key_schedule *ks1,DES_key_schedule *ks2, DES_cblock *ivec, int *num)	6:string:3:
+void DES_ede3_cbc_encrypt(const unsigned char *input,unsigned char *output, long length, DES_key_schedule *ks1,DES_key_schedule *ks2, DES_key_schedule *ks3, DES_cblock *ivec,int enc)	7:string:3:
+void DES_ede3_cfb64_encrypt(const unsigned char *in, unsigned char *out,long length, DES_key_schedule *ks1, DES_key_schedule *ks2,DES_key_schedule *ks3, DES_cblock *ivec, int *num, int enc)	7:string:3:
+void DES_ede3_ofb64_encrypt(const unsigned char *in, unsigned char *out,long length, DES_key_schedule *ks1,DES_key_schedule *ks2, DES_key_schedule *ks3,DES_cblock *ivec, int *num)	7:string:3:
+void DES_string_to_2keys(const char *str, DES_cblock *key1,DES_cblock *key2)	1:string:2:
+void DES_string_to_key(const char *str, DES_cblock *key)	1:string:2:
+void DES_ecb_encrypt(const_DES_cblock *input, DES_cblock *output,DES_key_schedule *ks, int enc)	0:none:4:
+char *DES_fcrypt(const char *buf, const char *salt, char *ret)	2:string:1:
+char *DES_crypt(const char *buf, const char *salt)	2:string:1:
+void RC2_set_key (RC2_KEY *key, int len, const unsigned char *data, int bits)	3:string:2:
+void RC2_ecb_encrypt(const unsigned char *in, unsigned char *out, RC2_KEY *key, int enc)	1:none:4:
+void RC2_encrypt(unsigned long *data, RC2_KEY *key)	1:none:4:
+void RC2_decrypt(unsigned long *data, RC2_KEY *key)	1:none:4:
+void RC2_cbc_encrypt(const unsigned char *in, unsigned char *out, long length, RC2_KEY *ks, unsigned char *iv, int enc)	5:string:3:
+void RC2_cfb64_encrypt(const unsigned char *in, unsigned char *out, long length, RC2_KEY *schedule, unsigned char *ivec, int *num, int enc)	5:string:3:
+void RC2_ofb64_encrypt(const unsigned char *in, unsigned char *out, long length, RC2_KEY *schedule, unsigned char *ivec, int *num)	5:string:3:
+void EVP_aes_128_ecb(int)	1:none:4:
+void EVP_aes_192_ecb(int)	1:none:4:
+void EVP_aes_256_ecb(int)	1:none:4:
+void EVP_bf_ecb(int)	1:none:4:
+void EVP_camellia_128_ecb(int)	1:none:4:
+void EVP_camellia_192_ecb(int)	1:none:4:
+void EVP_camellia_256_ecb(int)	1:none:4:
+void EVP_cast5_ecb(int)	1:none:4:
+void EVP_des_ecb(int)	1:none:4:
+void EVP_des_ede3_ecb(int)	1:none:4:
+void EVP_des_ede3_ecb(int)	1:none:4:
+int EVP_CipherInit(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, unsigned char *key, unsigned char *iv, int enc)	3:string:2:;4:string:3:
+int EVP_DecryptInit(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, unsigned char *key, unsigned char *iv)	3:string:2:;4:string:3:
+int EVP_EncryptInit(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, unsigned char *key, unsigned char *iv)	3:string:2:;4:string:3:
+int EVP_CipherInit_ex(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, ENGINE *impl, unsigned char *key, unsigned char *iv, int enc)	4:string:2:;5:string:3:
+int EVP_DecryptInit_ex(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, ENGINE *impl, unsigned char *key, unsigned char *iv)	4:string:2:;5:string:3:
+int EVP_EncryptInit_ex(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *type, ENGINE *impl, unsigned char *key, unsigned char *iv)	4:string:2:;5:string:3:
+int EVP_BytesToKey(const EVP_CIPHER *type, const EVP_MD *md,const unsigned char *salt, const unsigned char *data, int datal, int count, unsigned char *key,unsigned char *iv)	3:string:1:;4:string:2:;6:int:6:<1000;
+#libsodium
+#Nettle
+#openssl
+#libtomcrypt
+#libk5crypto
+#libbcmcrypto
+#libcrypt
+char *crypt(const char *key, const char *salt)	1:string:2:;2:string:1:
+#int rand()	::;
+#wolfcrypt
+int wc_AesSetKey(Aes *aes, const byte *key, word32 len, const byte *iv, int dir)	2:string:2:;4:string:3:
+int wc_AesSetIV(Aes *aes, const byte *iv)	2:string:3:
+void wc_AesEncryptDirect(Aes *aes, byte *out, const byte *in)	1:none:4:
+void wc_AesDecryptDirect(Aes *aes, byte *out, const byte *in)	1:none:4:
+int wc_AesSetKeyDirect (Aes *aes, const byte *key, word32 len, const byte *iv, int dir)	2:string:2:;4:string:3:
+int wc_AesGcmSetKey (Aes *aes, const byte *key, word32 len)	2:string:2:
+int wc_CamelliaSetKey (Camellia *cam, const byte *key, word32 len, const byte *iv)	2:string:2:;4:string:3:
+int wc_CamelliaSetIV (Camellia *cam, const byte *iv)	2:string:3:
+int wc_CamelliaEncryptDirect (Camellia *cam, byte *out, const byte *in)	1:none:4:
+int wc_CamelliaDecryptDirect (Camellia *cam, byte *out, const byte *in)	1:none:4:
+int wc_Des_SetKey (Des *des, const byte *key, const byte *iv, int dir)	2:string:2:;3:string:3:
+void wc_Des_SetIV (Des *des, const byte *iv)	2:string:3:
+int wc_Des_EcbEncrypt (Des *des, byte *out, const byte *in, word32 sz)	1:none:3:
+int wc_Des3_EcbEncrypt (Des3 *des, byte *out, const byte *in, word32 sz)	1:none:3:
+int wc_Des3_SetKey (Des3 *des, const byte *key, const byte *iv, int dir)	2:string:2:;3:string:3:
+int wc_Des3_SetIV (Des3 *des, const byte *iv)	2:string:3:
+int wc_Des_CbcDecryptWithKey (byte *out, const byte *in, word32 sz, const byte *key, const byte *iv)	4:string:2:;5:string:3:
+int wc_Des_CbcEncryptWithKey (byte *out, const byte *in, word32 sz, const byte *key, const byte *iv)	4:string:2:;5:string:3:
+int wc_Des3_CbcEncryptWithKey (byte *out, const byte *in, word32 sz, const byte *key, const byte *iv)	4:string:2:;5:string:3:
+int wc_Des3_CbcDecryptWithKey (byte *out, const byte *in, word32 sz, const byte *key, const byte *iv)	4:string:2:;5:string:3:
+#int strcmp(const char *a ,const char *b)	1:string:1:
+void srand(int seed)	1:int:5:

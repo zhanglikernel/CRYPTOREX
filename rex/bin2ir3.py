@@ -59,10 +59,10 @@ def idarun(filename, tmpname):
 	filename = filenameformat(filename);
 	idbfilename = getidbfilename(filename,".idb");
 	tmpname += "idcom";
-	print("/home/zhangli/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
-	os.system("/home/zhangli/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
-	print("/home/zhangli/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"/home/zhangli/idasc/bin2iridc.idc " + tmpname + "\" " + idbfilename);
-	os.system("/home/zhangli/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"/home/zhangli/idasc/bin2iridc.idc " + tmpname + "\" " + idbfilename);
+	print("../../IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
+	os.system("../../IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
+	print("../../IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"../idascript/bin2iridc.idc " + tmpname + "\" " + idbfilename);
+	os.system("../../IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"../idascript/bin2iridc.idc " + tmpname + "\" " + idbfilename);
 	rmtmpfile(filename);
 
 class FILETYPE:
@@ -391,7 +391,7 @@ def execorlib(filename):
 	return resulttype,offset;
 
 def execfunction():
-	functionfilename = "/home/zhangli/bin2ir/execfunction"
+	functionfilename = "execfunction"
 	functionfd = open(functionfilename,"r");
 	funcnameset = set();
 	funcdetail = dict();
@@ -445,7 +445,7 @@ def execfunction():
 		
 
 def rulematch():
-	rulefilename = "/home/zhangli/bin2ir/misuseprofile"
+	rulefilename = "misuseprofile"
 	rulefd = open(rulefilename,"r");
 	funcnameset = set();
 	funcdetail = dict();
@@ -1454,7 +1454,7 @@ def transbin2IR(filename,outputname,importfc = dict()):
 	funcdic = dict(proj.kb.functions);
 	msg = "";
 	alladdrset = set();
-	wfd = open("/home/zhangli/zhangli/1.txt","w");
+	#wfd = open("/home/zhangli/zhangli/1.txt","w");
 	for item in funcdic:
 		d = funcdic[item];
 		#print(dir(d));
@@ -1465,8 +1465,8 @@ def transbin2IR(filename,outputname,importfc = dict()):
 			irsb = block.vex;
 			functionnode = problock(irsb,lcom);
 			msg = functionnode.getstr();
-			wfd.write(msg);
-	wfd.close();
+			#wfd.write(msg);
+	#wfd.close();
 	testendtime = time.time();
 	print("endlift");
 	wtime = testendtime-testbegintime;

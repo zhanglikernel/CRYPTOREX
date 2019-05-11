@@ -248,9 +248,9 @@ def listallso(filename,arch):
 	soset = set();
 	commandstr = "";
 	if arch == archtype.Elmips:
-		commandstr = "/home/zhangli/armbuildroot/buildroot/output/host/bin/ldd"
+		commandstr = "$HOME/armbuildroot/buildroot/output/host/bin/ldd"
 	elif arch == archtype.Elarm:
-		commandstr = "/home/zhangli/buildroot/output/host/bin/ldd"
+		commandstr = "$HOME/buildroot/output/host/bin/ldd"
 	else:
 		return soset;
 	filename = filenameformat(filename);
@@ -388,7 +388,7 @@ def getIRtmp(filename,outputdir):
 
 def challown(filename):
 	filename = filenameformat(filename);
-	os.ystem("chown zhangli:zhangli " + filename);
+	os.ystem("chown $USER:$USER " + filename);
 
 
 def mkdir(path):
