@@ -7,7 +7,7 @@ CryptoREX is a firmware analysis tool to detect crypto misuses in IoT devices. N
 # How to use
 python bin2vex.py <firmware_path>(input_dir) <firmware_decompressed_path>(middle_dir) <firmware_IR_PATH>(middle_dir) <detail_report_path>(output_dir) <summary_report_dir>(output_dir)
 # How to cite
-Li Zhang, Jiongyi Chen, Wenrui Diao, Shanqing Guo, Jian Weng, and Kehuan Zhang. CryptoREX: Large-scale Analysis of Cryptographic Misuse in IoT Devices. The 22nd International Symposium on Research in Attacks, Intrusions and Defenses (RAID), Beijing, China. September, 2019.
+Li Zhang, Jiongyi Chen, [Wenrui Diao https://diaowenrui.github.io/], Shanqing Guo, Jian Weng, and Kehuan Zhang. CryptoREX: Large-scale Analysis of Cryptographic Misuse in IoT Devices. The 22nd International Symposium on Research in Attacks, Intrusions and Defenses (RAID), Beijing, China. September, 2019.
 # Paper Abstract
 Cryptographic functions play a critical role in the secure transmission and storage of application data. Although most crypto functions are well-defined and carefully-implemented in standard libraries, in practice, they could be easily misused or incorrectly encapsulated due to its error-prone nature and inexperience of developers. This situation is even worse in the IoT domain, given that developers tend to sacrifice security for performance in order to suit resource-constrained IoT devices. Given the severity and the pervasiveness of such bad practice, it is crucial to raise public awareness about this issue, find the misuses and shed light on best practices.
 
