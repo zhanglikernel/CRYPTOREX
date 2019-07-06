@@ -55,7 +55,6 @@ class compressmethod(Enum):
 	Edir = -2;
 	Eunknown = -1;
 
-
 def getcompressmethod(filename):
 	result = compressmethod.Eunknown;
 	if os.path.isdir(filename):
