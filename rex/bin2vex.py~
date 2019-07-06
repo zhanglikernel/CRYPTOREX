@@ -254,7 +254,7 @@ def listallso(filename,arch):
 		return soset;
 	filename = filenameformat(filename);
 	(status,output) = commands.getstatusoutput( commandstr + ' ' + filename);
-	#print(output);
+	print(output);
 	#print(filename);
 	#print(filename);
 	outstr = output.splitlines();

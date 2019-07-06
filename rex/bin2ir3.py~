@@ -62,7 +62,7 @@ def idarun(filename, tmpname):
 	print("$HOME/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
 	os.system("$HOME/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -B " + filename);
 	print("$HOME/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"/media/vezir/b2552981-cae5-4a83-9f27-2d07beede43e/CRYPTOREX/idascript/bin2iridc.idc " + tmpname + "\" " + idbfilename);
-	os.system("$HOME/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"/media/vezir/b2552981-cae5-4a83-9f27-2d07beede43e/CRYPTOREX/idascript/bin2iridc.idc " + tmpname + "\" " + idbfilename);
+	os.system("$HOME/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/IDA_Pro_v6.4_\(Linux\)_and_Hex-Rays_Decompiler_\(ARM\)/idaq -S\"../idascript/bin2iridc.idc " + tmpname + "\" " + idbfilename);
 	rmtmpfile(filename);
 
 class FILETYPE:
